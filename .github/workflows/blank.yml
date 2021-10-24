@@ -22,7 +22,7 @@ jobs:
           deno-version: "v1"
       
       - name: "Version"
-        if: "{{ github.ref == 'refs/heads/main' }}"
+        if: "github.ref == 'refs/heads/main'"
         id: "version"
         run: |
           echo "::set-env name=version::$(echo $(deno run -Aq https://crux.land/38Jyby))"
