@@ -18,4 +18,5 @@ jobs:
       
       - name: "Version"
         run: |
-          echo $(git describe --abbrev=0)
+          gitVersion="$(git describe --abbrev=0)"
+          echo $gitVersion
