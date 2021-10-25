@@ -31,6 +31,6 @@ jobs:
           echo "${{ env.VERSION }}"
       - name: "Print Version"
         if: "github.ref == 'refs/heads/main'"
-        run: "echo {{ env.VERSION }}"
+        run: "echo ${{ env.VERSION }}"
           
       
