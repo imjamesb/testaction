@@ -27,8 +27,10 @@ jobs:
         env:
           MSG: "${{ github.event.head_commit.message }}"
         run: |
-          echo "version=$(deno run -Aq https://crux.land/38Jyby)" >> $GITHUB_ENV
-          echo "${{ env.version }}"
-          
+          echo "VERSION=$(deno run -Aq https://crux.land/38Jyby)" >> $GITHUB_ENV
+          echo "${{ env.VERSION }}"
+      - name: "Print Version"
+        if: "github.ref == 'refs/heads/main'"
+        run: "echo {{ env.VERSION }}"
           
       
