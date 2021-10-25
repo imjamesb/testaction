@@ -27,7 +27,7 @@ jobs:
         env:
           MSG: "${{ github.event.head_commit.message }}"
         run: |
-          echo "::set-env name=version::$(echo $(deno run -Aq https://crux.land/38Jyby))"
-          echo "${{ steps.version.version }}"
+          echo "version=$(deno run -Aq https://crux.land/38Jyby)" >> $GITHUB_ENV
+          echo "${{ env.version }}"
           
       
