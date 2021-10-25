@@ -30,4 +30,5 @@ jobs:
           echo "version=$(deno run -Aq https://crux.land/38Jyby)" >> $GITHUB_ENV
           echo "${{ env.version }}"
           
+          
       
